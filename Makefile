@@ -6,14 +6,14 @@
 #    By: fgracefo <fgracefo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/19 21:43:17 by lgarse            #+#    #+#              #
-#    Updated: 2020/10/28 18:53:08 by fgracefo         ###   ########.fr        #
+#    Updated: 2020/10/28 21:55:10 by fgracefo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME =			lem-in
 LIBFT_A =		libft.a
 
-COMP =			gcc -Wall -Werror -Wextra -I includes -I libft/includes -I libft/libft -c -o
+COMP =			gcc -g -Wall -Werror -Wextra -I includes -I libft/includes -I libft/libft -c -o
 
 OBJ_DIR =		obj/
 SRC_DIR =		srcs/
