@@ -17,14 +17,16 @@ int		main(int ac, char **av)
 	t_rooms	*rooms;
 	int		ants;
 	int		ant_end;
+	int 	fd;
 
-	ants = read_ants();
+	fd = open(av[2], O_RDONLY);
+	ants = read_ants(fd);
 	rooms = init_rooms();
 	if (ac == 2 && av[1][0] == 'b')
 		rooms->flag_bonus = 1;
 	else
 		*av = NULL;
-	read_rooms(rooms, ants);
+	read_rooms(rooms, ants, fd);
 	if (!rooms->paths)
 		write_error(1, rooms);
 	find_paths(rooms);

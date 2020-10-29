@@ -12,9 +12,9 @@
 
 #include "../includes/lem_in.h"
 
-int	to_be(char **line)
+int	to_be(char **line, int fd)
 {
-	gnl(line);
+	gnl(line, fd);
 	if (!ft_strlen(*line))
 		return (0);
 	return (1);

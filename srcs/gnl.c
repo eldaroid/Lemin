@@ -12,12 +12,12 @@
 
 #include "../includes/lem_in.h"
 
-int		gnl(char **line)
+int		gnl(char **line, int fd)
 {
 	char	*c;
 	int		gnl_ret;
 
-	while ((gnl_ret = get_next_line(0, &c)))
+	while ((gnl_ret = get_next_line(fd, &c)))
 	{
 		if (gnl_ret == -1)
 			exit(1);

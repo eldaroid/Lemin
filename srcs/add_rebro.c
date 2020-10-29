@@ -12,7 +12,7 @@
 
 #include "../includes/lem_in.h"
 
-void	add_rebro(t_rooms *r, char *l, int ants)
+void	add_rebro(t_rooms *r, char *l, int ants, int fd)
 {
 	char	*line;
 	int		ret;
@@ -23,7 +23,7 @@ void	add_rebro(t_rooms *r, char *l, int ants)
 	ret = 1;
 	while (ret)
 	{
-		ret = to_be(&line);
+		ret = to_be(&line, fd);
 		if (ret)
 			fill_path(r, line, ants);
 		ft_strdel(&line);

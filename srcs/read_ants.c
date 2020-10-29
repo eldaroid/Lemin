@@ -11,15 +11,16 @@
 /* ************************************************************************** */
 
 #include "../includes/lem_in.h"
+#include <fcntl.h>
 
-int		read_ants(void)
+int		read_ants(int fd)
 {
 	char		*line;
 	int			ants;
 	int			i;
 	__int128_t	num;
 
-	ants = get_next_line(0, &line);
+	ants = get_next_line(fd, &line);
 	if (ants == -1 || ants == 0 || line[0] == '\0')
 		write_e_ants(1, line);
 	i = 0;

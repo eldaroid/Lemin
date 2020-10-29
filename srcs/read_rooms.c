@@ -12,17 +12,17 @@
 
 #include "../includes/lem_in.h"
 
-void	read_rooms(t_rooms *r, int ants)
+void	read_rooms(t_rooms *r, int ants, int fd)
 {
 	char	*line;
 	int		flag;
 
 	flag = 0;
-	while (gnl(&line) != 0 && line != NULL)
+	while (gnl(&line, fd) != 0 && line != NULL)
 	{
 		if (ft_strchr(line, '-') != NULL)
 		{
-			add_rebro(r, line, ants);
+			add_rebro(r, line, ants, fd);
 			ft_strdel(&line);
 			break ;
 		}
