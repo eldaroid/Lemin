@@ -45,18 +45,18 @@ typedef struct	s_rooms
 	int			*nant_path;
 }				t_rooms;
 
-int				read_ants(void);
-int				gnl(char **line);
+int				read_ants(int fd);
+int				gnl(char **line, int fd);
 t_rooms			*init_rooms(void);
 int				add_room_list(t_rooms *r, char *line);
-void			add_rebro(t_rooms *r, char *l, int ants);
+void			add_rebro(t_rooms *r, char *l, int ants, int fd);
 void			convert_rooms(t_rooms *r1);
 void			setup_s_e(t_rooms *r, int ta, int *flag, char *line);
 int				*zero_paths(int n);
 void			delete_content(void *content, size_t content_size);
-void			read_rooms(t_rooms *r, int ants);
+void			read_rooms(t_rooms *r, int ants, int fd);
 void			fill_path(t_rooms *r, char *line, int ants);
-int				to_be(char **line);
+int				to_be(char **line, int fd);
 int				receive_index(char *name, t_rooms *r);
 void			free_split(char **split);
 void			find_paths(t_rooms *r);
